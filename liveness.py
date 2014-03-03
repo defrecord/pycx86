@@ -30,12 +30,10 @@ class Liveness(Visitor):
             if not W and not R:
                 continue
             
-            print W, R
             self.liveness_at_inst[inst] = (after_live - set(W)) | set(R)
+            print "%s --> %s" % (inst, self.liveness_at_inst[inst])
             after_live = self.liveness_at_inst[inst]
-            
-        print self.liveness_at_inst
-        
+
     def vIfStatement(self, node):
         print "If"
         
