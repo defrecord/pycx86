@@ -49,6 +49,16 @@ class Visitor:
             last = i.accept(self)
         return last
     
+    def _visitReverseList(self, list):
+        """ Visit a list of nodes in reverse order. 'list' should be an actual list,
+        not a cparse.NodeList object."""
+        last = None
+        reverse_list = list
+        reverse_list.reverse()
+        for i in reverse_list:
+            last = i.accept(self)
+        return last
+    
     def visit(self, node):
         """Visits the given node by telling the node to call the
         visitor's class-specific visitor method for that node's

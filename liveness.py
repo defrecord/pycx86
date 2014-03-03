@@ -19,7 +19,7 @@ class Liveness(Visitor):
         
     def vNodeList(self, node):
         print "Node List"
-        self._visitList(node.nodes)
+        self._visitReverseList(node.nodes)
         
     def vIfStatement(self, node):
         print "If"
@@ -40,10 +40,10 @@ class Liveness(Visitor):
         print "String"
         
     def vConst(self, node):
-        print "Const"
+        return node.value
         
     def vId(self, node):
-        print "Id"
+        return node.name
         
     def vArrayExpression(self, node):
         print "Array"
@@ -55,7 +55,7 @@ class Liveness(Visitor):
         print "Return"
         
     def vBinop(self, node):
-        print "Binop"
+        print "BinOp: %s %s %s" % (self.visit(node.left), node.op, self.visit(node.right))
         
     def vNegative(self, node):
         print "Negative"
