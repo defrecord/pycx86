@@ -1,0 +1,95 @@
++ TranslationUnit
+    + FunctionDefn
+      Type-string: function()->int
+      extern: 0
+      static: 0
+      name: main
+      Type:
+        + FunctionType
+          Parameters::
+            + ParamList
+              has_ellipsis: 0
+          Child::
+            + BaseType
+              type_str: int
+      Body:
+        + CompoundStatement
+          Declaration list:
+            + DeclarationList
+                + Declaration
+                  Type-string: int
+                  extern: 0
+                  static: 0
+                  name: a
+                  is_used: 0
+                  Type:
+                    + BaseType
+                      type_str: int
+                + Declaration
+                  Type-string: int
+                  extern: 0
+                  static: 0
+                  name: b
+                  is_used: 0
+                  Type:
+                    + BaseType
+                      type_str: int
+                + Declaration
+                  Type-string: int
+                  extern: 0
+                  static: 0
+                  name: c
+                  is_used: 0
+                  Type:
+                    + BaseType
+                      type_str: int
+          Statement list:
+            + StatementList
+                + Binop
+                  op: =
+                  Left operand:
+                    + Id
+                      name: a
+                      lineno: 6
+                  Right operand:
+                    + Const
+                      Type-string: int
+                      value: 10
+                      Type:
+                        + BaseType
+                          type_str: int
+                + Binop
+                  op: =
+                  Left operand:
+                    + Id
+                      name: b
+                      lineno: 7
+                  Right operand:
+                    + Const
+                      Type-string: int
+                      value: 20
+                      Type:
+                        + BaseType
+                          type_str: int
+                + Binop
+                  op: =
+                  Left operand:
+                    + Id
+                      name: c
+                      lineno: 8
+                  Right operand:
+                    + Binop
+                      op: *
+                      Left operand:
+                        + Id
+                          name: a
+                          lineno: 8
+                      Right operand:
+                        + Id
+                          name: b
+                          lineno: 8
+                + ReturnStatement
+                  Expression:
+                    + Id
+                      name: c
+                      lineno: 9
